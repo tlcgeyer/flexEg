@@ -1,0 +1,44 @@
+*,
+*::after
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container :is(#mangaForSale),
+.button-wrapper {
+    display: flex;
+    gap: 6rem;
+}
+.container :is(#mangaForSale) {
+    flex-flow: row wrap;
+}
+.item {
+    display: grid;
+    grid-template-rows: 20 rem 1fr auto;
+}
+.item>img{
+    width: 20rem;
+    aspect-ratio: 1/1;
+}
+.button-wrapper button {
+    border: 3px solid;
+}
+.image-animation {
+    background: fixed;
+    height: auto;
+}
+img[alt="Picture"]{
+    width: 10rem;
+    aspect-ratio: 1/1;
+    animation: animateSaitama 5s infinite;
+    transition: all .5s;
+}
+@keyframes animateSaitama {
+    from {
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(calc(100vw - 100px));
+    }
+}
